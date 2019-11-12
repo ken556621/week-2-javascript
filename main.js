@@ -75,13 +75,15 @@ assignment3.innerHTML =`
 
 assignmentAdvance.innerHTML =`
 <p style='white-space: pre';>
-    function twoSum(nums, target){
+function twoSum(nums, target){
     let index = 0;
     let resultIndex = [];
         while(resultIndex.length === 0 && index < (nums.length - 1)){
                 nums.slice(index + 1).forEach(number => {
                     if(number === (target - nums[index])){
                         resultIndex.push(index, nums.indexOf(number));
+                    }else if(nums[index] === target && resultIndex.length === 0){
+                      resultIndex.push(index); //預防一個數字就是答案
                     }
             })
             index++
@@ -90,5 +92,8 @@ assignmentAdvance.innerHTML =`
     }
 
     想法：固定最左邊的數，向右邊查找相對應的數目(forEach); 若無，則固定左邊第二個數字再向右查找(while迴圈)
+    問題：
+       1. 有可能一個數字就是答案嗎？就是不需要加另一個數子就可以達到要求
+       
 </p>
 `
