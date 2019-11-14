@@ -17,18 +17,8 @@ assignment1.innerHTML =`
 
 assignment2.innerHTML =`
 <p style='white-space: pre';>
-    function calculate(args){ 
-        let result;
-        if(args.op === "+"){ 
-            result = args.n1+args.n2;
-        }else if(args.op === "-"){ 
-            result = args.n1-args.n2;
-        }else{
-            result = "Not supported";
-        }
-        return result; 
-    }
 
+    //第一種
     class Args{
         constructor(n1, n2){
             this.op = "-";
@@ -38,6 +28,14 @@ assignment2.innerHTML =`
     }
 
     let args = new Args();
+    calculate(args);
+
+    //第二種
+    let args = new Object();
+    args.op = "+";
+    args.n1 = 3;
+    args.n2 = 5;
+    
     calculate(args);
 </p>
 `
