@@ -9,8 +9,14 @@ const assignmentAdvance = document.querySelector('.assignment-advance');
 assignment1.innerHTML =`
 <p style='white-space: pre';>
     function max(...numbers){
-        const result = numbers.sort();
-        return result[result.length - 1];
+        let maxNumber = '';
+        maxNumber = numbers[0];//從第一個數開始
+        for(let i = 0;i < numbers.length;i++){
+            if(maxNumber < numbers[i]){
+                maxNumber = numbers[i];
+            }
+        }
+        return maxNumber
     }
 </p>
 `
